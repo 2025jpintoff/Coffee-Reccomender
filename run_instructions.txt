@@ -1,0 +1,23 @@
+FLASK_APP=app.py
+FLASK_DEBUG=1 flask run
+
+Boostrap Link: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+# DEBUG COMMAND: python3 -m flask run --debug
+
+
+def recommend(temperature, size, strength, sweet, flavor, milk):
+    recommendations = []
+    for coffee in coffees:
+        if temperature.lower() == coffee["temperature"].lower():
+            if strength.lower() == "high" and coffee["strength"] >= 90:
+                if milk and coffee["milk"]:
+                    recommendations.append(coffee)
+                elif not milk:
+                    recommendations.append(coffee)
+            elif strength.lower() == "low" and coffee["strength"] < 90:
+                if milk and coffee["milk"]:
+                    recommendations.append(coffee)
+                elif not milk:
+                    recommendations.append(coffee)
+    return recommendations
