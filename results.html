@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Drink Recommendations for {{ fname }} {{ lname }}:</h1>
+
+<!-- New Recommendation Card Display -->
+
+<div class="recommendation-container">
+    {% for result in results %}
+    <div class="recommendation-card">
+        <img src="{{ result['image'] }}" alt="{{ result['name'] }}" class="small-image">
+        <div class="drink-details">
+            <h2 class="drink-name">{{ result['name'] }}</h2>
+            <div class="drink-sizes">
+                {% for size in result['size'] %}
+                <div class="size-option">
+                    <span class="size-name">{{ size }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <p>Temperature: {{ result["temperature"] }}</p>
+            <p>Sweet: {{ result["sweet"] }}</p>
+            <p>Strength: {{ result["strength"] }}mg of caffeine</p>
+            <p>Flavor: {{ result["flavor"] }}</p>
+            <p>Milk: {{ result["milk"] }}</p>
+            <p><a href="{{ result['url'] }}" target="_blank">Learn more on Wikipedia</a></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+<!-- Current Results Display -->
+<!-- {% for result in results %}
+<div class="result-info">
+    <p>Name: {{ result["name"] }}</p>
+    <p>Temperature: {{ result["temperature"] }}</p>
+    <p>Size: {{ result["size"] }}</p>
+    <p>Sweet: {{ result["sweet"] }}</p>
+    <p>Strength: {{ result["strength"] }}mg of caffeine</p>
+    <p>Flavor: {{ result["flavor"] }}</p>
+    <p>Milk: {{ result["milk"] }}</p>
+    <p><a href="{{ result["url"] }}" target="_blank">Learn more on Wikipedia</a></p>
+    <img src="{{ result['image'] }}" class="small-image"/>
+</div>
+{% endfor %} -->

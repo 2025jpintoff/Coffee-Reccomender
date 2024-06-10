@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>What Coffee Should You Have?</h1> 
+
+    <form action="/results" method="POST">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+
+<br>
+        <label for="temperature">Choose your temperature:</label> <br>
+            <input type="radio" id="temperature" name="temperature" value="hot" required>
+            <label for="temperature">Hot</label><br>
+            <input type="radio" id="temperature" name="temperature" value="cold">
+            <label for="temperature">Cold</label><br>
+
+<br>
+        <label for="size">Pick your size:</label> <br>
+            <input type="radio" id="size" name="size" value="small" required>
+            <label for="size">Small</label><br>
+            <input type="radio" id="size" name="size" value="large">
+            <label for="size">Large</label><br>
+
+
+<br>
+          <label for="strength">Pick your coffee strength:</label> <br>
+               <input type="radio" id="strength" name="strength" value="low" required>
+               <label for="strength">Low</label><br>
+               <input type="radio" id="strength" name="strength" value="high">
+               <label for="strength">High</label><br>      
+               
+<br>
+          <label for="sweet">Do you want your drink to be sweet:</label> <br>
+               <input type="radio" id="sweet" name="sweet" value="yes" required>
+               <label for="sweet">Yes</label><br>
+               <input type="radio" id="sweet" name="sweet" value="no">
+               <label for="sweet">No</label><br>    
+               
+<br>
+          <label for="flavor">Would you want added flavoring:</label> <br>
+               <input type="radio" id="flavor" name="flavor" value="yes">
+               <label for="flavor">Yes</label><br>
+               <input type="radio" id="flavor" name="flavor" value="no">
+               <label for="flavor">No</label><br>    
+
+                              
+<br>
+          <label for="milk">Do you want milk in your coffee:</label> <br>
+              <input type="radio" id="milk" name="milk" value="yes" required>
+              <label for="milk">Yes</label><br>
+              <input type="radio" id="milk" name="milk" value="no">
+              <label for="milk">No</label><br>    
+
+          <br><br>
+          <input type="submit" value="Submit">
+      </form> 
+
+
+{% endblock %}
